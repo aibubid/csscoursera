@@ -1,65 +1,111 @@
-/* Шаг 3: Тег body — шрифт и его размер */
+/* --- БАЗОВЫЕ СТИЛИ И ДОСТУПНОСТЬ --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
+    line-height: 1.6;
     margin: 0;
-    color: #222; /* Темный текст для контраста */
+    color: #333;
 }
 
-/* Шаг 4: Тег header — цвет фона */
-header {
-    background-color: #1a252f; /* Темно-синий */
-    padding: 30px;
-}
-
-/* Шаг 5: Тег nav — цвет фона */
-nav {
-    background-color: #2c3e50; /* Чуть светлее синий */
+/* Ссылка Skip Link: скрыта по умолчанию, видна при фокусе (Tab) */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background: #bf360c;
+    color: white;
     padding: 10px;
-}
-
-/* Шаг 6: Тег main — фон и размер шрифта */
-main {
-    background-color: #f4f4f4; /* Светло-серый фон */
-    font-size: 20px;
-    padding: 40px;
-    min-height: 300px;
-}
-
-/* Шаг 7: Тег footer — цвет фона */
-footer {
-    background-color: #1a252f;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Шаг 8: Тег li — display и width (создаем сетку) */
-li {
-    display: inline-block;
-    width: 30%; 
-    list-style-type: none; /* Убираем маркеры */
-}
-
-/* Шаг 9: Тег h1 — выравнивание, шрифт и цвет */
-h1 {
-    text-align: center;
-    font-family: 'Georgia', serif;
-    color: #ffffff; /* Белый на темном фоне = отличный контраст */
-}
-
-/* Шаг 10: Тег p — межстрочный интервал */
-p {
-    line-height: 1.8;
-}
-
-/* Дополнительно: стиль для ссылок, чтобы они были видны в меню */
-nav a {
-    color: #ffffff;
     text-decoration: none;
-    font-weight: bold;
+    z-index: 10;
 }
 
-nav a:hover {
-    color: #1abc9c;
+.skip-link:focus {
+    top: 10px;
+}
+
+/* Шаг 3: Комментируем старое правило для li */
+/* li {
+    display: inline-block;
+    width: 30%;
+} 
+*/
+
+/* --- НАВИГАЦИЯ --- */
+
+/* Шаг 4: nav как inline-block с шириной 80% */
+nav {
+    display: inline-block;
+    width: 80%;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Шаг 5: Потомственный селектор для картинки в nav (ширина 10%) */
+nav img {
+    width: 10%;
+    height: auto;
+    vertical-align: middle;
+}
+
+nav ul {
+    display: inline-block;
+    width: 85%;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- СЕТКА (GRID) --- */
+
+/* Шаг 6 & 8: Две колонки по 40%, выравнивание и отступы */
+.grid {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: center; /* Центрируем колонки */
+    column-gap: 5%;         /* Промежуток между колонками */
+    row-gap: 30px;          /* Шаг 8: Отступ между рядами */
+    align-items: start;     /* Шаг 8: Выравнивание по верхнему краю */
+    margin: 20px 0;
+}
+
+/* Шаг 7: Изображения только внутри .grid занимают 100% ширины колонки */
+.grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* --- ФЛЕКС (FLEX) --- */
+
+/* Шаг 9: Использование flex, wrap и justify-content */
+.flex {
+    display: flex;
+    flex-wrap: wrap;           /* Позволяет элементам переноситься */
+    justify-content: space-around; /* Распределяет место вокруг элементов */
+    background-color: #e3f2fd;
+    padding: 20px;
+    gap: 10px;
+}
+
+.flex-item {
+    background: #1976d2;
+    color: white;
+    padding: 20px;
+    flex: 1 1 200px; /* Растет, сужается, база 200px */
+    text-align: center;
+}
+
+/* Цвета для WAVE (Контрастность) */
+header {
+    background-color: #263238;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #263238;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
 }
