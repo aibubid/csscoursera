@@ -1,33 +1,57 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Мой проект</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 2 - CSS Grid & Flex</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>Добро пожаловать на сайт</h1>
-</header>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="about.html">О нас</a></li>
-        <li><a href="contact.html">Контакты</a></li>
-    </ul>
-</nav>
+    <header>
+        <h1>My Styled Website</h1>
+    </header>
 
-<main>
-    <h2>Основной контент</h2>
-    <p>Это пример текста, для которого мы настроим межстрочный интервал и размер шрифта согласно заданию.</p>
-    <p>Мы используем контрастные цвета, чтобы пройти проверку WAVE.</p>
-</main>
+    <nav>
+        <img src="https://via.placeholder.com/150" alt="Site Logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="parks.html">Parks</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-<footer>
-    <p>&copy; 2026 Aivi. Все права защищены.</p>
-</footer>
+    <main id="main-content">
+        
+        <h2>Grid Layout (Two Columns)</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="Park view 1">
+                <p>Описание парка в сетке.</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="Park view 2">
+                <p>Еще одно описание в сетке.</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>Flex Layout (Gallery)</h2>
+        <div class="flex">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+            <div class="flex-item">Item 4</div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Web Design Student</p>
+    </footer>
 
 </body>
 </html>
